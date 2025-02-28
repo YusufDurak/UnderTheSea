@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 131702640}
   - component: {fileID: 131702639}
   - component: {fileID: 131702638}
-  - component: {fileID: 131702637}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -139,20 +138,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &131702637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131702636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3cda17f58ddccf419d7bf13c8600a27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveDirection: {x: 1, y: 0}
-  moveSpeed: 5
 --- !u!114 &131702638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,7 +381,7 @@ Transform:
   m_GameObject: {fileID: 1755495766}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.43, y: 1.97, z: 0}
+  m_LocalPosition: {x: 7.84, y: 1.97, z: 0}
   m_LocalScale: {x: 1.2133124, y: 0.9466, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -610,7 +595,7 @@ Transform:
   m_GameObject: {fileID: 2082566713}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.15, y: -2.71, z: 0}
+  m_LocalPosition: {x: -7.63, y: -2.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -762,12 +747,10 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 12.152132, y: 0.20869207}
-  - {x: 12.107256, y: -5.448511}
-  - {x: -11.266987, y: -5.4753003}
-  - {x: -11.285421, y: 0.060046017}
-  - {x: -10.371771, y: 0.31336558}
-  - {x: -9.622222, y: 0.16565521}
+  - {x: 9.272802, y: 0.035932362}
+  - {x: 9.285511, y: -5.5636835}
+  - {x: -8.502829, y: -5.504093}
+  - {x: -8.459652, y: -5.340172}
   - {x: -8.463384, y: 0.29915118}
   - {x: -7.156338, y: 0.1305282}
   - {x: -5.9770527, y: 0.28551173}
@@ -782,10 +765,8 @@ EdgeCollider2D:
   - {x: 3.6651175, y: 0.07143493}
   - {x: 5.507185, y: 0.3120234}
   - {x: 7.3741097, y: 0.023747697}
-  - {x: 8.93162, y: 0.4967065}
-  - {x: 9.8560705, y: 0.17800003}
-  - {x: 11.229974, y: 0.52415484}
-  - {x: 12.029029, y: 0.2571528}
+  - {x: 8.614895, y: 0.29515338}
+  - {x: 9.308997, y: 0.06282681}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
