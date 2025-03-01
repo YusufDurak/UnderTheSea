@@ -4,8 +4,11 @@ using UnityEngine;
 public class ObjectSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject objectPrefab; // Prefab to spawn
+    [SerializeField] private GameObject Prefab; // Prefab to spawn
     [SerializeField] private Transform spawnPoint; // Spawn position
+    [SerializeField] private Transform Point; // Spawn position
     [SerializeField] private float spawnInterval = 3f; // Time interval
+    public bool purna = true;
 
     private void Start()
     {
@@ -23,9 +26,25 @@ public class ObjectSpawner : MonoBehaviour
 
     private void SpawnObject()
     {
-        if (objectPrefab != null)
+        if (purna)
         {
-            Instantiate(objectPrefab, spawnPoint.position, Quaternion.identity);
+            Debug.Log("tr");
+            if (objectPrefab != null)
+            {
+                Instantiate(objectPrefab, spawnPoint.position, Quaternion.identity);
+                purna = false;
+            }
         }
+        if (purna==false)
+        {
+            Debug.Log("fl");
+
+            if (objectPrefab != null)
+            {
+                Instantiate(Prefab, Point.position, Quaternion.identity);
+                purna = true;
+            }
+        }
+
     }
 }
