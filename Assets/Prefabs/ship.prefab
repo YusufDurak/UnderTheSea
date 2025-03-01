@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2334906987601807938}
   - component: {fileID: 3012172166687127247}
   - component: {fileID: 6186509362565307841}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380d8996f92d7d543bc755ae7253f2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countingCooldown: 0.2
 --- !u!1 &6129056624278509389
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,9 +189,9 @@ GameObject:
   - component: {fileID: 2160996677555838732}
   - component: {fileID: 8307725870755557070}
   - component: {fileID: 4577536976118181603}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ship
-  m_TagString: Untagged
+  m_TagString: ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -323,7 +324,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

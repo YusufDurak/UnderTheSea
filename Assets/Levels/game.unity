@@ -153,8 +153,9 @@ MonoBehaviour:
   Prefab: {fileID: 6129056624278509389, guid: 6743cbdbae65ac845b099dd1b99680bf, type: 3}
   spawnPoint: {fileID: 1518442500}
   Point: {fileID: 1273661205}
-  spawnInterval: 3
+  spawnInterval: 2
   purna: 1
+  spawnChangeCooldown: 0.5
 --- !u!4 &1988305
 Transform:
   m_ObjectHideFlags: 0
@@ -954,6 +955,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5513944853658086526, guid: ebdec224cd2e6bc40a5a7b679cce5a43, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543674401973139378, guid: ebdec224cd2e6bc40a5a7b679cce5a43, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543674401973139378, guid: ebdec224cd2e6bc40a5a7b679cce5a43, type: 3}
+      propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
