@@ -1,10 +1,10 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 
 public class MineMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 3f;
-    [SerializeField] private float lifetime = 7.5f; // Time before mine disappears
+    [SerializeField] private float lifetime = 7.5f;
     private Rigidbody2D rb;
     private Vector2 moveDirection;
 
@@ -16,7 +16,7 @@ public class MineMovement : MonoBehaviour
     private void Start()
     {
         rb.linearVelocity = moveDirection * moveSpeed;
-        StartCoroutine(DestroyAfterTime()); // Start countdown to disappear
+        StartCoroutine(DestroyAfterTime());
     }
 
     public void SetDirection(Vector2 direction)
@@ -24,10 +24,9 @@ public class MineMovement : MonoBehaviour
         moveDirection = direction;
         rb.linearVelocity = moveDirection * moveSpeed;
 
-        // Flip sprite if moving left
         if (direction.x < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1); // Flip horizontally
+            transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 
@@ -39,10 +38,10 @@ public class MineMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("whale")) // If the whale touches the mine
+        if (other.CompareTag("whale"))
         {
             Destroy(other.gameObject); // Destroy the whale
-            Debug.Log("The whale hit a mine and perished!");
+            GameManager.Instance.TriggerGameOver(); //  Notify GameManager
         }
     }
 }
