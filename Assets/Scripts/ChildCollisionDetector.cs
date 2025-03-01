@@ -3,7 +3,7 @@ using UnityEngine;
 public class ChildCollisionDetector : MonoBehaviour
 {
     private ShipMovement parentShip;
-    [SerializeField] public int hitCount = 0;
+    private int hitCount = 0;
     [SerializeField] private int maxHits = 3;
     [SerializeField] private float countingCooldown = 0.2f;
     private float lastCountTime = 0f;
@@ -19,8 +19,9 @@ public class ChildCollisionDetector : MonoBehaviour
         {
             lastCountTime = Time.time;
             hitCount++;
-            parentShip.SlowDownForOneSecond();
-           // Debug.Log("Whale hit ship collider. Hits: " + hitCount);
+            parentShip.SlowDownForOneSecond(); // Ship slows down
+            parentShip.ShakeShip(); // Ship shakes for 0.5s
+            Debug.Log("Whale hit ship collider. Hits: " + hitCount);
 
             if (hitCount >= maxHits)
             {

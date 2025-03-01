@@ -9,9 +9,9 @@ public class ShipMovement : MonoBehaviour
     private Rigidbody2D rb;
     private bool isSlowed = false;
     private Animator animator;
+    private bool isShaking = false;
 
 
-    
 
     private void Awake()
     {
@@ -64,5 +64,33 @@ public class ShipMovement : MonoBehaviour
         {
             DestroyShip(); // Destroy ship if it touches a GameObject tagged "destroy"
         }
+    }
+    public void ShakeShip()
+    {
+        if (!isShaking)
+        {
+            StartCoroutine(ShakeCoroutine());
+        }
+    }
+    private IEnumerator ShakeCoroutine()
+    {
+        isShaking = true;
+        Vector3 originalPosition = transform.position;
+
+        float shakeDuration = 0.5f;
+        float elapsedTime = 0f;
+        float shakeAmount = 0.1f;
+
+        while (elapsedTime < shakeDuration)
+        {
+            float offsetX = Random.Range(-shakeAmount, shakeAmount);
+            float offsetY = Random.Range(-shakeAmount, shakeAmount);
+            transform.position = originalPosition + new Vector3(offsetX, offsetY, 0);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = originalPosition; // Reset position after shake
+        isShaking = false;
     }
 }
