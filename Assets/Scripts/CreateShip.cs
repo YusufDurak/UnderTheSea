@@ -34,7 +34,7 @@ public class ObjectSpawner : MonoBehaviour
 
         if (randomNumber % 2 == 0)
         {
-            Debug.Log("tr");
+            //Debug.Log("tr");
             if (objectPrefab != null)
             {
                 Instantiate(objectPrefab, spawnPoint.position, Quaternion.identity);
@@ -43,7 +43,7 @@ public class ObjectSpawner : MonoBehaviour
         }
         else if (randomNumber % 3 == 0) //  Now we spawn Prefab3 for multiples of 3
         {
-            Debug.Log("spawning Prefab3");
+            //Debug.Log("spawning Prefab3");
             if (Prefab3 != null)
             {
                 Instantiate(Prefab3, spawnPoint.position, Quaternion.identity);
@@ -52,7 +52,7 @@ public class ObjectSpawner : MonoBehaviour
         }
         else
         {
-            Debug.Log("fl");
+            //Debug.Log("fl");
             if (Prefab != null)
             {
                 Instantiate(Prefab, Point.position, Quaternion.identity);

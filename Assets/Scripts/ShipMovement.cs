@@ -3,11 +3,11 @@ using System.Collections;
 
 public class ShipMovement : MonoBehaviour
 {
-    [SerializeField] private Vector2 moveDirection = Vector2.right; // Set direction in Inspector
+    [SerializeField] private Vector2 moveDirection = Vector2.right;
     [SerializeField] private float moveSpeed = 5f;
-    private float defaultSpeed; // Stores original speed
+    private float defaultSpeed;
     private Rigidbody2D rb;
-    private bool isSlowed = false; // Prevent multiple slowdowns
+    private bool isSlowed = false;
 
     private void Awake()
     {
@@ -16,13 +16,13 @@ public class ShipMovement : MonoBehaviour
 
     private void Start()
     {
-        defaultSpeed = moveSpeed; // Store original speed
-        rb.linearVelocity = moveDirection.normalized * moveSpeed; // Set velocity
+        defaultSpeed = moveSpeed;
+        rb.linearVelocity = moveDirection.normalized * moveSpeed;
     }
 
     public void SlowDownForOneSecond()
     {
-        if (!isSlowed) // Prevent multiple slowdowns
+        if (!isSlowed)
         {
             StartCoroutine(SlowDownTemporarily());
         }
@@ -31,21 +31,21 @@ public class ShipMovement : MonoBehaviour
     private IEnumerator SlowDownTemporarily()
     {
         isSlowed = true;
-        moveSpeed /= 2f; // Reduce speed by half
-        rb.linearVelocity = moveDirection.normalized * moveSpeed; // Apply new speed
-        Debug.Log("Ship speed halved!");
+        moveSpeed /= 2f;
+        rb.linearVelocity = moveDirection.normalized * moveSpeed;
+       // Debug.Log("Ship speed halved!");
 
-        yield return new WaitForSeconds(1f); // Wait for 1 second
+        yield return new WaitForSeconds(1f);
 
-        moveSpeed = defaultSpeed; // Restore original speed
-        rb.linearVelocity = moveDirection.normalized * moveSpeed; // Apply original speed
+        moveSpeed = defaultSpeed;
+        rb.linearVelocity = moveDirection.normalized * moveSpeed;
         isSlowed = false;
-        Debug.Log("Ship speed restored!");
+       // Debug.Log("Ship speed restored!");
     }
 
     public void DestroyShip()
     {
-        Debug.Log("Ship destroyed after 3 hits!");
+        //Debug.Log("Ship destroyed after 3 hits!");
         Destroy(gameObject);
     }
 }
