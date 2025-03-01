@@ -8,6 +8,6 @@ public class Rules : MonoBehaviour
 
     void Update()
     {
-        //count.text = "Ships Taken Down: " + ChildCollisionDetector.hit; 
+        count.text = "SCORE: " + GameManager.Instance.GetScore(); 
     }
 }

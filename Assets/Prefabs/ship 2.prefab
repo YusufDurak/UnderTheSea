@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380d8996f92d7d543bc755ae7253f2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitCount: 0
   maxHits: 3
   countingCooldown: 0.2
 --- !u!1 &6129056624278509389
@@ -190,6 +191,7 @@ GameObject:
   - component: {fileID: 2160996677555838732}
   - component: {fileID: 8307725870755557070}
   - component: {fileID: 4577536976118181603}
+  - component: {fileID: -6661388788773956272}
   m_Layer: 6
   m_Name: ship 2
   m_TagString: ship
@@ -356,6 +358,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.1323981, y: 1.6337032}
   m_EdgeRadius: 0
+--- !u!95 &-6661388788773956272
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6129056624278509389}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e0ccbc88e8981404e81dedce9687a581, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7620179904248928384
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,5 +471,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380d8996f92d7d543bc755ae7253f2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitCount: 0
   maxHits: 3
   countingCooldown: 0.2

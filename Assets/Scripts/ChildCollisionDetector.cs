@@ -3,7 +3,7 @@ using UnityEngine;
 public class ChildCollisionDetector : MonoBehaviour
 {
     private ShipMovement parentShip;
-    private int hitCount = 0;
+    [SerializeField] public int hitCount = 0;
     [SerializeField] private int maxHits = 3;
     [SerializeField] private float countingCooldown = 0.2f;
     private float lastCountTime = 0f;

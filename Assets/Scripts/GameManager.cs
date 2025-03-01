@@ -22,4 +22,10 @@ public class GameManager : MonoBehaviour
         score += points;
         Debug.Log("Score: " + score);
     }
+
+    //  Getter method to access score
+    public int GetScore()
+    {
+        return score;
+    }
 }

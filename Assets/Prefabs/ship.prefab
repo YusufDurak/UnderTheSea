@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380d8996f92d7d543bc755ae7253f2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitCount: 0
   maxHits: 3
   countingCooldown: 0.2
 --- !u!1 &3678461449323936970
@@ -268,6 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380d8996f92d7d543bc755ae7253f2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitCount: 0
   maxHits: 3
   countingCooldown: 0.2
 --- !u!1 &6129056624278509389
@@ -283,6 +285,7 @@ GameObject:
   - component: {fileID: 2160996677555838732}
   - component: {fileID: 8307725870755557070}
   - component: {fileID: 4577536976118181603}
+  - component: {fileID: 3902410588643769360}
   m_Layer: 6
   m_Name: ship
   m_TagString: ship
@@ -449,3 +452,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.3112855, y: 1.890398}
   m_EdgeRadius: 0
+--- !u!95 &3902410588643769360
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6129056624278509389}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e2425ad1d0425c44290554883939e13e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

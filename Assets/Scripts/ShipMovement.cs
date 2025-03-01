@@ -8,6 +8,10 @@ public class ShipMovement : MonoBehaviour
     private float defaultSpeed;
     private Rigidbody2D rb;
     private bool isSlowed = false;
+    private Animator animator;
+
+
+    
 
     private void Awake()
     {
@@ -17,6 +21,9 @@ public class ShipMovement : MonoBehaviour
     private void Start()
     {
         defaultSpeed = moveSpeed;
+
+        animator = GetComponent<Animator>();
+
         rb.linearVelocity = moveDirection.normalized * moveSpeed;
     }
 
@@ -46,6 +53,9 @@ public class ShipMovement : MonoBehaviour
     public void DestroyShip()
     {
         //Debug.Log("Ship destroyed after 3 hits!");
-        Destroy(gameObject);
+
+        animator.SetBool("ShipAnim", true);
+
+        Destroy(gameObject, 0.5f);
     }
 }
