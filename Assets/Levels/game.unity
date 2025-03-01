@@ -151,8 +151,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 6129056624278509389, guid: 9fd691b314252ab4d95bca0a5cb83361, type: 3}
   Prefab: {fileID: 6129056624278509389, guid: 6743cbdbae65ac845b099dd1b99680bf, type: 3}
+  Prefab3: {fileID: 6129056624278509389, guid: 53c1ec691b605d942a3735e600296609, type: 3}
   spawnPoint: {fileID: 1518442500}
   Point: {fileID: 1273661205}
+  Point3: {fileID: 1518442500}
   spawnInterval: 2
   purna: 1
   spawnChangeCooldown: 0.5

@@ -5,13 +5,15 @@ public class ObjectSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject objectPrefab; // Prefab to spawn
     [SerializeField] private GameObject Prefab; // Prefab to spawn
+    [SerializeField] private GameObject Prefab3; // Prefab to spawn
     [SerializeField] private Transform spawnPoint; // Spawn position
     [SerializeField] private Transform Point; // Spawn position
+    [SerializeField] private Transform Point3; // Spawn position
     [SerializeField] private float spawnInterval = 3f; // Time interval
     public bool purna = true;
     private float lastspawnChangeTime = 1f;
     public float spawnChangeCooldown = 0.5f; // Cooldown time in seconds
-    int randomNumber= Random.Range(1, 7);
+    int randomNumber;
     private void Start()
     {
         StartCoroutine(SpawnObjects());
@@ -29,7 +31,8 @@ public class ObjectSpawner : MonoBehaviour
     private void SpawnObject()
     {
         randomNumber = Random.Range(1, 7);
-        if (randomNumber%2==0)
+
+        if (randomNumber % 2 == 0)
         {
             Debug.Log("tr");
             if (objectPrefab != null)
@@ -38,18 +41,26 @@ public class ObjectSpawner : MonoBehaviour
                 purna = false;
             }
         }
-        if (randomNumber % 2 != 0)
+        else if (randomNumber % 3 == 0) //  Now we spawn Prefab3 for multiples of 3
         {
-            Debug.Log("fl");          
-
-            if (objectPrefab != null )
+            Debug.Log("spawning Prefab3");
+            if (Prefab3 != null)
             {
-                
+                Instantiate(Prefab3, spawnPoint.position, Quaternion.identity);
+                purna = false;
+            }
+        }
+        else
+        {
+            Debug.Log("fl");
+            if (Prefab != null)
+            {
                 Instantiate(Prefab, Point.position, Quaternion.identity);
                 purna = true;
-                lastspawnChangeTime = Time.time+3f;
+                lastspawnChangeTime = Time.time + 3f;
             }
         }
         randomNumber = 0;
     }
+
 }

@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 3678461449323936970}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01, y: -0.1, z: 0}
-  m_LocalScale: {x: 0.08241901, y: 1.4578491, z: 1}
+  m_LocalPosition: {x: 0.01, y: -0.79, z: 0}
+  m_LocalScale: {x: 0.08241901, y: 2.1721952, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5287463380331533874}
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 8307725870755557070}
   - component: {fileID: 4577536976118181603}
   m_Layer: 6
-  m_Name: ship 1
+  m_Name: ship 2
   m_TagString: ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -205,7 +205,7 @@ Transform:
   m_GameObject: {fileID: 6129056624278509389}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.01, y: 2.118, z: 0}
+  m_LocalPosition: {x: 16.01, y: 2.25, z: 0}
   m_LocalScale: {x: 1.2133124, y: 0.9466, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -256,9 +256,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7158603499633043647, guid: 77c7311d20749c64e962e0b3b4bea874, type: 3}
+  m_Sprite: {fileID: -7918744712103271040, guid: deaf28127c3c40545a786b37475e0327, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3cda17f58ddccf419d7bf13c8600a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDirection: {x: 5, y: 0}
+  moveDirection: {x: -1, y: 0}
   moveSpeed: 5
 --- !u!61 &4577536976118181603
 BoxCollider2D:
@@ -342,15 +342,15 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.05653721, y: 2.0562754}
+  m_Offset: {x: 0.010889828, y: 2.033483}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5294118, y: -0.83673465}
-    oldSize: {x: 2.125, y: 1.53125}
+    pivot: {x: 0.4925373, y: -0.83673465}
+    oldSize: {x: 2.09375, y: 1.53125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.1448922, y: 1.5797424}
+  m_Size: {x: 2.1323981, y: 1.6337032}
   m_EdgeRadius: 0
