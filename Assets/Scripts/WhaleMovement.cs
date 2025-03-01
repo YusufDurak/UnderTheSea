@@ -18,7 +18,6 @@ public class WhaleMovement : MonoBehaviour
     private void Update()
     {
         HandleInput();
-        Debug.Log(directionChangeCooldown);
     }
 
     private void FixedUpdate()
