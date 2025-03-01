@@ -58,4 +58,11 @@ public class ShipMovement : MonoBehaviour
 
         Destroy(gameObject, 0.5f);
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("destroy"))
+        {
+            DestroyShip(); // Destroy ship if it touches a GameObject tagged "destroy"
+        }
+    }
 }

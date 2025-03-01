@@ -8,6 +8,7 @@ TagManager:
   - whale
   - ship
   - ShipCollider
+  - mine
   layers:
   - Default
   - TransparentFX
@@ -16,8 +17,8 @@ TagManager:
   - Water
   - UI
   - ship
-  - 
-  - 
+  - mine
+  - whale
   - 
   - 
   - 
