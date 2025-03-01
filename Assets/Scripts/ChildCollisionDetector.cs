@@ -18,9 +18,7 @@ public class ChildCollisionDetector : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("whale") && isColliding && Time.time >= lastCountTime + countingCooldown)
-        {
-
-            
+        {    
             hit++; 
             Debug.Log("Exited collision with Whale. Total hits: " + hit);
             lastCountTime = Time.time;
