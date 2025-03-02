@@ -21,7 +21,7 @@ public class ChildCollisionDetector : MonoBehaviour
             hitCount++;
             parentShip.SlowDownForOneSecond(); // Ship slows down
             parentShip.ShakeShip(); // Ship shakes for 0.5s
-            Debug.Log("Whale hit ship collider. Hits: " + hitCount);
+            //Debug.Log("Whale hit ship collider. Hits: " + hitCount);
 
             if (hitCount >= maxHits)
             {

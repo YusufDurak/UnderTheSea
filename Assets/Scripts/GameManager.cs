@@ -43,7 +43,12 @@ public class GameManager : MonoBehaviour
     public void AddScore(int points)
     {
         score += points;
-        Debug.Log("Score: " + score);
+        Debug.Log("Current Score: " + score);
+        // Send the score to HighScoreManager to check for a new high score
+        if (HighScoreManager.Instance != null)
+        {
+            HighScoreManager.Instance.UpdateScore(score);
+        }
     }
 
     //  Getter method to access score
