@@ -4,30 +4,41 @@ public class MusicManager : MonoBehaviour
 {
     private static MusicManager instance;
     private AudioSource audioSource;
+    private float currentVolume = 1f; // Default volume (1 = 100%)
 
-    [SerializeField] private AudioClip level1Music; // Music for Level 1
-    [SerializeField] private AudioClip level2Music; // Music for Level 2
+    public static MusicManager Instance
+    {
+        get { return instance; }
+    }
 
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // Keep this object across all scenes
-
-            audioSource = GetComponent<AudioSource>();
-            if (audioSource == null)
-            {
-                Debug.LogError("No AudioSource found on MusicManager!");
-                return;
-            }
-
-            audioSource.loop = true; // Make sure the music loops
-            audioSource.Play(); // Start playing the music
+            DontDestroyOnLoad(gameObject); // Keep this object across levels
         }
         else
         {
-            Destroy(gameObject); // Prevent duplicate music managers
+            Destroy(gameObject); // Prevent duplicate instances
+            return;
         }
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            Debug.LogError("No AudioSource found on MusicManager!");
+            return;
+        }
+
+        audioSource.loop = true; // Ensure the music loops
+        audioSource.Play(); // Start playing if not already playing
+    }
+
+    public void SetVolume(float volume)
+    {
+        currentVolume = volume;
+        audioSource.volume = currentVolume;
+        Debug.Log("Music Volume: " + currentVolume);
     }
 }
