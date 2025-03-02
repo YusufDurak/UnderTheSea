@@ -175,7 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380d8996f92d7d543bc755ae7253f2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitCount: 0
   maxHits: 3
   countingCooldown: 0.2
 --- !u!1 &6129056624278509389
@@ -311,7 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDirection: {x: -1, y: 0}
-  moveSpeed: 5
+  moveSpeed: 7
 --- !u!61 &4577536976118181603
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -471,6 +470,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380d8996f92d7d543bc755ae7253f2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitCount: 0
   maxHits: 3
   countingCooldown: 0.2
