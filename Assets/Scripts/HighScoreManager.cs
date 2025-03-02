@@ -3,7 +3,7 @@ using UnityEngine;
 public class HighScoreManager : MonoBehaviour
 {
     public static HighScoreManager Instance { get; private set; }
-    private int highScore = 0;
+    public int highScore = 0;
 
     private void Awake()
     {
@@ -26,5 +26,11 @@ public class HighScoreManager : MonoBehaviour
             highScore = newScore;
             Debug.Log("New High Score: " + highScore);
         }
+    }
+
+
+    public int getHigh()
+    {
+        return highScore;
     }
 }
