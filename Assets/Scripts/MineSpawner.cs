@@ -26,18 +26,22 @@ public class MineSpawner : MonoBehaviour
     {
         if (minePrefab == null || leftSpawnPoints.Length == 0 || rightSpawnPoints.Length == 0) return;
 
-        bool spawnLeft = Random.Range(0, 2) == 0; // Randomly choose to spawn from left or right group
+        bool spawnLeft = Random.Range(0, 2) == 0; // Randomly choose left or right spawn
         Transform spawnPoint = spawnLeft
             ? leftSpawnPoints[Random.Range(0, leftSpawnPoints.Length)]
             : rightSpawnPoints[Random.Range(0, rightSpawnPoints.Length)];
 
-        GameObject newMine = Instantiate(minePrefab, spawnPoint.position, Quaternion.identity);
+        // Set rotation based on spawn side
+        Quaternion mineRotation = Quaternion.Euler(0, 0, spawnLeft ? 90f : -90f);
 
-        // Set the mine's movement direction based on its spawn position
+        GameObject newMine = Instantiate(minePrefab, spawnPoint.position, mineRotation);
+
+        // Set movement direction based on spawn side
         MineMovement mineMovement = newMine.GetComponent<MineMovement>();
         if (mineMovement != null)
         {
             mineMovement.SetDirection(spawnLeft ? Vector2.left : Vector2.right);
         }
     }
+
 }
