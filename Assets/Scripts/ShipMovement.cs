@@ -10,20 +10,18 @@ public class ShipMovement : MonoBehaviour
     private bool isSlowed = false;
     private Animator animator;
     private bool isShaking = false;
-
-
+    private PowerUpDrop powerUpDrop;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        powerUpDrop = GetComponent<PowerUpDrop>();
     }
 
     private void Start()
     {
         defaultSpeed = moveSpeed;
-
         animator = GetComponent<Animator>();
-
         rb.linearVelocity = moveDirection.normalized * moveSpeed;
     }
 
@@ -40,31 +38,35 @@ public class ShipMovement : MonoBehaviour
         isSlowed = true;
         moveSpeed /= 2f;
         rb.linearVelocity = moveDirection.normalized * moveSpeed;
-       // Debug.Log("Ship speed halved!");
 
         yield return new WaitForSeconds(1f);
 
         moveSpeed = defaultSpeed;
         rb.linearVelocity = moveDirection.normalized * moveSpeed;
         isSlowed = false;
-       // Debug.Log("Ship speed restored!");
     }
 
     public void DestroyShip()
     {
-        //Debug.Log("Ship destroyed after 3 hits!");
-
         animator.SetBool("ShipAnim", true);
-
+        
+        // Power-up düşürme şansını kontrol et
+        if (powerUpDrop != null)
+        {
+            powerUpDrop.TryDropPowerUp();
+        }
+        
         Destroy(gameObject, 0.5f);
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("destroy"))
         {
-            DestroyShip(); // Destroy ship if it touches a GameObject tagged "destroy"
+            DestroyShip();
         }
     }
+
     public void ShakeShip()
     {
         if (!isShaking)
@@ -72,6 +74,7 @@ public class ShipMovement : MonoBehaviour
             StartCoroutine(ShakeCoroutine());
         }
     }
+
     private IEnumerator ShakeCoroutine()
     {
         isShaking = true;
@@ -90,7 +93,7 @@ public class ShipMovement : MonoBehaviour
             yield return null;
         }
 
-        transform.position = originalPosition; // Reset position after shake
+        transform.position = originalPosition;
         isShaking = false;
     }
 }

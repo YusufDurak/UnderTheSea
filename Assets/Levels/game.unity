@@ -629,6 +629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   retryScreen: {fileID: 1906927192}
+  scoreMultiplier: 1
 --- !u!4 &570038913
 Transform:
   m_ObjectHideFlags: 0

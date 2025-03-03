@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject retryScreen; //  Assign in Inspector
     private bool gameOver = false;
     private int score = 0;
+    public int scoreMultiplier = 1; // Puan çarpanı
 
 
     private void Awake()
@@ -42,7 +43,7 @@ public class GameManager : MonoBehaviour
 
     public void AddScore(int points)
     {
-        score += points;
+        score += points * scoreMultiplier; // Puan çarpanını uygula
         Debug.Log("Current Score: " + score);
         // Send the score to HighScoreManager to check for a new high score
         if (HighScoreManager.Instance != null)

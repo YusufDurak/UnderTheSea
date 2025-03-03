@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 8307725870755557070}
   - component: {fileID: 4577536976118181603}
   - component: {fileID: -6661388788773956272}
+  - component: {fileID: 2196208625129626332}
   m_Layer: 6
   m_Name: ship 2
   m_TagString: ship
@@ -379,6 +380,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2196208625129626332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6129056624278509389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3b61dbea63a734e8fc25542b97b28d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUpPrefabs:
+  - {fileID: 5097113212811227894, guid: b24faea290f1c8d46bc1f904473bf7d7, type: 3}
+  - {fileID: 5715278290587218134, guid: a54f3aa4a86d6414eb6d1c22893774a8, type: 3}
+  - {fileID: 4431527201291654122, guid: 295528e5b3d12bb45b438f99b242a10e, type: 3}
+  dropChance: 0.2
+  dropHeight: 2
+  dropOffset: 1
 --- !u!1 &7620179904248928384
 GameObject:
   m_ObjectHideFlags: 0
